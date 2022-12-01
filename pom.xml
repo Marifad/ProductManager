@@ -57,7 +57,7 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
-                            <rules>
+                        <rules>
                                 <rule>
                                     <limits>
                                         <limit>
@@ -74,3 +74,5 @@
             </plugin>
         </plugins>
     </build>
+
+</project>
