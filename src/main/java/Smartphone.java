@@ -7,7 +7,4 @@ public class Smartphone extends Product {
         this.manufacturer = manufacturer;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
 }

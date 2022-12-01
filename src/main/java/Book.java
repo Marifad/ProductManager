@@ -8,7 +8,4 @@ public Book(int id, String name, int price, String author) {
 
 }
 
-public String getAuthor() {
-    return author;
-}
 }
