@@ -7,7 +7,17 @@ public class ProductRepositoryTest {
     Product product2 = new Product(4, "Долгая дорога", 300);
     Product product3 = new Product(10, "Платье", 950);
 
+    @Test
+    public void shouldFindById() {
 
+        ProductRepository repo = new ProductRepository();
+        repo.save(product1);
+        repo.save(product2);
+        Product expected = product2;
+        Product actual = repo.findById(4);
+        Assertions.assertEquals(expected, actual);
+
+    }
 
     @Test
     public void shouldSave() {
@@ -48,6 +58,18 @@ public class ProductRepositoryTest {
         Product[] expected = {};
         Product[] actual = repo.getItems();
         Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldThrowException() {
+
+        ProductRepository repo = new ProductRepository();
+        repo.save(product1);
+        repo.save(product2);
+        repo.save(product3);
+
+        Assertions.assertThrows(NotFoundException.class, () -> repo.removeById(100));
 
     }
 }
