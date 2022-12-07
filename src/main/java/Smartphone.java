@@ -7,4 +7,20 @@ public class Smartphone extends Product {
         this.manufacturer = manufacturer;
     }
 
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        } else if (getManufacturer().contains(search)) {
+            return true;
+        } else {
+            return false;
+
+        }
+
+    }
 }
